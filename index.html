@@ -14,19 +14,20 @@
 </head>
 <body>
     <h1>Send Test Email</h1>
-    <form action="./send_formspree_email.php" method="POST">
+    <form action="https://formspree.io/f/xdknnalz" method="POST">
         <label>
             メールアドレス:
-            <input type="email" name="email">
+            <input type="email" name="email" required>
         </label>
         <br />
         <label>
             メッセージ:
-            <textarea name="message"></textarea>
+            <textarea name="user_message" required></textarea>
         </label>
         <br />
-        <input type="hidden" name="message" value="Click the link below to track in Google Analytics: https://atsudora.github.io/poc-gamail/confirmation.html?utm_source=newsletter&utm_medium=email&utm_campaign=test_campaign">
-        <button type="submit" name="send" value="send">Send</button>
+        <input type="hidden" name="_subject" value="Test Email for Google Analytics">
+        <input type="hidden" name="tracking_message" value="Click the link below to track in Google Analytics: https://atsudora.github.io/poc-gamail/confirmation.html?utm_source=newsletter&utm_medium=email&utm_campaign=test_campaign">
+        <button type="submit">Send</button>
     </form>
 </body>
 </html>
