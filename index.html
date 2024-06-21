@@ -13,7 +13,11 @@
     </script>
 </head>
 <body>
-    <h1>Welcome to the Test Page</h1>
-    <p>This is a test page for Google Analytics tracking.</p>
+  <h1>Send Test Email</h1>
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="post">
+    <input type="hidden" name="_subject" value="Test Email for Google Analytics">
+    <input type="hidden" name="message" value="Click the link below to track in Google Analytics: http://your-github-pages-url/confirmation.html?utm_source=newsletter&utm_medium=email&utm_campaign=test_campaign">
+    <button type="submit">Send Test Email</button>
+</form>
 </body>
 </html>
