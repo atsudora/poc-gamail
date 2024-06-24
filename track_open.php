@@ -1,6 +1,7 @@
 <?php
+$config = require 'config.php';
 // Google Analytics Measurement Protocol
-$ga_tracking_id = 'G-CGHVPHPEL6'; // 例: G-CGHVPHPEL6
+$ga_tracking_id = $config['ga_tracking_id'];
 
 // クライアントIDを生成または取得（ここでは簡単のため固定値を使用）
 $client_id = '555.555';
