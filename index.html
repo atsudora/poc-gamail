@@ -2,7 +2,8 @@
 <html>
 <head>
     <title>Test Page for Google Analytics</title>
-    <!-- Google tag (gtag.js) -->
+    <meta charset="UTF-8">
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CGHVPHPEL6"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -14,7 +15,7 @@
 </head>
 <body>
     <h1>Send Test Email</h1>
-    <form action="https://formspree.io/f/xdknnalz" method="POST">
+    <form action="send_email.php" method="POST">
         <label>
             メールアドレス:
             <input type="email" name="email" required>
@@ -25,9 +26,7 @@
             <textarea name="user_message" required></textarea>
         </label>
         <br />
-        <input type="hidden" name="_subject" value="Test Email for Google Analytics">
-        <input type="hidden" name="tracking_message" value="Click the link below to track in Google Analytics: https://atsudora.github.io/poc-gamail/confirmation.html?utm_source=newsletter&utm_medium=email&utm_campaign=test_campaign">
-        <button type="submit">Send</button>
+        <button type="submit" name="send" value="send">Send</button>
     </form>
 </body>
 </html>

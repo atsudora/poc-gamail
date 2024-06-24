@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: poc-gamail
+    runtime: docker
+    plan: free
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: APP_ENV
+        value: local
+      - key: SMTP_USERNAME
+        value: ${SMTP_USERNAME}
+      - key: SMTP_PASSWORD
+        value: ${SMTP_PASSWORD}
+      - key: EMAIL_FROM
+        value: ${EMAIL_FROM}
+
