@@ -14,7 +14,7 @@ return [
         'subject' => 'Test Email for Google Analytics',
         'tracking_pixel_url' => 'https://poc-gamail.onrender.com/track_open.php',
         'google_analytics_url' => 'https://poc-gamail.onrender.com/',
-        'utm_parameters' => 'utm_source=arara&utm_medium=email&utm_campaign=test_campaign'
+        'utm_parameters' => 'utm_source=newsletter&utm_medium=email&utm_campaign=test_campaign'
     ],
     'ga_tracking_id' => 'G-83RQZRK36V',
 ];
