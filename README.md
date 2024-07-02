@@ -39,4 +39,25 @@ Affiriate | アフィリエイトサイトからの訪問
 
 ## 参考リンク
 - [[GA4] URL 生成ツール: カスタム URL でキャンペーン データを収集する](https://support.google.com/analytics/answer/10917952#cc-set-up&zippy=%2C%E3%81%93%E3%81%AE%E8%A8%98%E4%BA%8B%E3%81%AE%E5%86%85%E5%AE%B9)
-- 
+
+## Googleタグマネージャ
+1. このコードは、次のようにページの <head> 内のなるべく上のほうに貼り付けてください。
+
+```
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5SWDS4L3');</script>
+<!-- End Google Tag Manager -->
+```
+
+2. 開始タグ <body> の直後にこのコードを次のように貼り付けてください。
+
+```
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SWDS4L3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+```
