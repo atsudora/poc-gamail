@@ -12,9 +12,13 @@ return [
         'from' => getenv('EMAIL_FROM'),
         'from_name' => 'Mailer',
         'subject' => 'Test Email for Google Analytics',
-        'tracking_pixel_url' => 'https://poc-gamail.onrender.com/track_open.php',
+        'pixel_tracking_url' => 'https://poc-gamail.onrender.com/pixel_tracker.php',
         'google_analytics_url' => 'https://poc-gamail.onrender.com/',
         'utm_parameters' => 'utm_source=newsletter&utm_medium=email&utm_campaign=test_campaign'
     ],
-    'ga_tracking_id' => 'G-83RQZRK36V',
+    'measurement_protocol' => [
+        'api_secret' => getenv('API_SECRET'),
+        'ga_tracking_id' => 'G-83RQZRK36V',
+        'client_id' => '1111',
+    ],
 ];

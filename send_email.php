@@ -54,7 +54,7 @@ if (isset($_POST['send'])) {
             // コンテンツ
             $mail->isHTML(true);
             $mail->Subject = $config['email']['subject'];
-            $tracking_pixel = "<img src='{$config['email']['tracking_pixel_url']}' width='1' height='1' style='display:none;'>";
+            $tracking_pixel = "<img src='{$config['email']['pixel_tracking_url']}' alt='tracking pixel' style='display:none;'>";
             $message = "<p>$user_message</p>";
             $message .= "<p>Click the link below to track in Google Analytics:</p>";
             $message .= "<p><a href='{$config['email']['google_analytics_url']}?";
