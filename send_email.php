@@ -21,6 +21,9 @@ if (isset($_POST['send'])) {
      */
     $email = $_POST['email'] ?? '';
     $user_message = $_POST['user_message'] ?? '';
+    $utm_source = $_POST['utm_source'] ?? 'newsletter';
+    $utm_medium = $_POST['utm_medium'] ?? 'email';
+    $utm_campaign = $_POST['utm_campaign'] ?? 'test_campaign';
 
     // 入力されたメールアドレスの全角英数字を半角に変換
     $email = mb_convert_kana($email, 'as');
@@ -54,12 +57,12 @@ if (isset($_POST['send'])) {
             // コンテンツ
             $mail->isHTML(true);
             $mail->Subject = $config['email']['subject'];
-            $tracking_pixel = "<img src='{$config['email']['pixel_tracking_url']}' alt='tracking pixel' style='display:none;'>";
+            $tracking_pixel_url = $config['email']['pixel_tracking_url'] . '?email=' . urlencode($email);
+            $tracking_pixel = "<img src='$tracking_pixel_url' alt='tracking pixel' style='display:none;'>";
+            $utm_parameters = "utm_source=$utm_source&utm_medium=$utm_medium&utm_campaign=$utm_campaign";
             $message = "<p>$user_message</p>";
             $message .= "<p>Click the link below to track in Google Analytics:</p>";
-            $message .= "<p><a href='{$config['email']['google_analytics_url']}?";
-            $message .= "{$config['email']['utm_parameters']}'>";
-            $message .= "Track in Google Analytics</a></p>";
+            $message .= "<p><a href='{$config['email']['google_analytics_url']}?$utm_parameters'>Track in Google Analytics</a></p>";
             $message .= $tracking_pixel;
             $mail->Body = $message;
 

@@ -28,7 +28,35 @@
             <textarea name="user_message" required></textarea>
         </label>
         <br />
+        <label>
+            UTM Source:
+            <select name="utm_source" required>
+                <option value="newsletter">Newsletter</option>
+                <option value="social">Social Media</option>
+                <option value="ad">Advertisement</option>
+            </select>
+        </label>
+        <br />
+        <label>
+            UTM Medium:
+            <select name="utm_medium" required>
+                <option value="email">Email</option>
+                <option value="cpc">CPC</option>
+                <option value="referral">Referral</option>
+            </select>
+        </label>
+        <br />
+        <label>
+            UTM Campaign:
+            <select name="utm_campaign" required>
+                <option value="test_campaign">Test Campaign</option>
+                <option value="spring_sale">Spring Sale</option>
+                <option value="product_launch">Product Launch</option>
+            </select>
+        </label>
+        <br />
         <button type="submit" name="send" value="send">Send</button>
     </form>
 </body>
 </html>
+

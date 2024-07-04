@@ -2,6 +2,13 @@
 /**
  * GA4 Measurement Protocol APIを使用してメール開封イベントをトラッキングするスクリプト
  */
+
+// GETパラメータからメールアドレスを取得
+$email = isset($_GET['email']) ? $_GET['email'] : 'unknown@example.com';
+
+// メールアドレスをハッシュ化
+$email_hash = hash('sha256', $email);
+
 $api_secret = $config['measurement_protocol']['api_secret'];
 $measurement_id = $config['measurement_protocol']['ga_tracking_id'];
 $client_id = ['measurement_protocol']['client_id'];
@@ -17,6 +24,7 @@ $data = [
         [
             'name' => 'email_tracking',
             'params' => [
+                'user_id' => $email_hash,
                 'items' => [],
                 'action' => 'open'
             ]
