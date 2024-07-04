@@ -21,6 +21,7 @@ if (isset($_POST['send'])) {
      */
     $email = $_POST['email'] ?? '';
     $user_message = $_POST['user_message'] ?? '';
+    $user_name = $_POST['user_name'] ?? '';
     $utm_source = $_POST['utm_source'] ?? 'newsletter';
     $utm_medium = $_POST['utm_medium'] ?? 'email';
     $utm_campaign = $_POST['utm_campaign'] ?? 'test_campaign';
@@ -57,7 +58,7 @@ if (isset($_POST['send'])) {
             // コンテンツ
             $mail->isHTML(true);
             $mail->Subject = $config['email']['subject'];
-            $tracking_pixel_url = $config['email']['pixel_tracking_url'] . '?email=' . urlencode($email);
+            $tracking_pixel_url = $config['email']['pixel_tracking_url'] . '?user_name=' . urlencode($user_name);
             $tracking_pixel = "<img src='$tracking_pixel_url' alt='tracking pixel' style='display:none;'>";
             $utm_parameters = "utm_source=$utm_source&utm_medium=$utm_medium&utm_campaign=$utm_campaign";
             $message = "<p>$user_message</p>";

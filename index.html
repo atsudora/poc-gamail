@@ -19,18 +19,22 @@
     <h1>Send Test Email</h1>
     <form action="send_email.php" method="POST">
         <label>
-            メールアドレス:
+            メールアドレス(必須):
             <input type="email" name="email" required>
         </label>
         <br />
         <label>
-            メッセージ:
+            メッセージ(必須):
             <textarea name="user_message" required></textarea>
         </label>
         <br />
         <label>
+            ユーザー名:
+            <input type="text" name="user_name"></input>
+        </label>
+        <label>
             UTM Source:
-            <select name="utm_source" required>
+            <select name="utm_source">
                 <option value="newsletter">newsletter</option>
                 <option value="social">social</option>
                 <option value="ad">ad</option>
@@ -39,7 +43,7 @@
         <br />
         <label>
             UTM Medium:
-            <select name="utm_medium" required>
+            <select name="utm_medium">
                 <option value="email">email</option>
                 <option value="cpc">cpc</option>
                 <option value="referral">referral</option>
@@ -48,7 +52,7 @@
         <br />
         <label>
             UTM Campaign:
-            <select name="utm_campaign" required>
+            <select name="utm_campaign">
                 <option value="test_campaign_1">test_campaign_1</option>
                 <option value="test_campaign_2">test_campaign_2</option>
                 <option value="test_campaign_3">test_campaign_3</option>

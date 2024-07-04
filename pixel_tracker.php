@@ -4,10 +4,7 @@
  */
 
 // GETパラメータからメールアドレスを取得
-$email = isset($_GET['email']) ? $_GET['email'] : 'unknown@example.com';
-
-// メールアドレスをハッシュ化
-$email_hash = hash('sha256', $email);
+$user_name = isset($_GET['user_name']) ? $_GET['user_name'] : 'unknown';
 
 $api_secret = $config['measurement_protocol']['api_secret'];
 $measurement_id = $config['measurement_protocol']['ga_tracking_id'];
@@ -24,7 +21,7 @@ $data = [
         [
             'name' => 'email_tracking',
             'params' => [
-                'user_id' => $email_hash,
+                'user_name' => $user_name,
                 'items' => [],
                 'action' => 'open'
             ]
