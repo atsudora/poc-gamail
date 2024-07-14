@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-    <title>Test Page for Google Analytics</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Analytics Test Page</title>
+    <link rel="stylesheet" href="styles.css">
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -16,52 +18,39 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SWDS4L3"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <h1>Send Test Email</h1>
+    <h1>GA4検証用のテストメール送信フォーム</h1>
     <form action="send_email.php" method="POST">
-        <label>
-            メールアドレス(必須):
-            <input type="email" name="email" required>
-        </label>
-        <br />
-        <label>
-            メッセージ(必須):
-            <textarea name="user_message" required></textarea>
-        </label>
-        <br />
-        <label>
-            ピクセルトラッキング用のパラメータ:
-            <input type="text" name="custom"></input>
-        </label>
-        <br />
-        <label>
-            UTM Source:
-            <select name="utm_source">
-                <option value="newsletter">newsletter</option>
-                <option value="social">social</option>
-                <option value="ad">ad</option>
-            </select>
-        </label>
-        <br />
-        <label>
-            UTM Medium:
-            <select name="utm_medium">
-                <option value="email">email</option>
-                <option value="cpc">cpc</option>
-                <option value="referral">referral</option>
-            </select>
-        </label>
-        <br />
-        <label>
-            UTM Campaign:
-            <select name="utm_campaign">
-                <option value="test_campaign_1">test_campaign_1</option>
-                <option value="test_campaign_2">test_campaign_2</option>
-                <option value="test_campaign_3">test_campaign_3</option>
-            </select>
-        </label>
-        <br />
+        <label for="email">メールアドレス(必須):</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="user_message">メッセージ(必須):</label>
+        <textarea id="user_message" name="user_message" rows="4" required></textarea>
+        
+        <label for="custom">ピクセルトラッキング用のカスタムパラメータの値:</label>
+        <input type="text" id="custom" name="custom">
+        
+        <label for="utm_source">UTM Source:</label>
+        <select id="utm_source" name="utm_source">
+            <option value="newsletter">newsletter</option>
+            <option value="social">social</option>
+            <option value="ad">ad</option>
+        </select>
+        
+        <label for="utm_medium">UTM Medium:</label>
+        <select id="utm_medium" name="utm_medium">
+            <option value="email">email</option>
+            <option value="cpc">cpc</option>
+            <option value="referral">referral</option>
+        </select>
+        
+        <label for="utm_campaign">UTM Campaign:</label>
+        <select id="utm_campaign" name="utm_campaign">
+            <option value="test_campaign_1">test_campaign_1</option>
+            <option value="test_campaign_2">test_campaign_2</option>
+            <option value="test_campaign_3">test_campaign_3</option>
+        </select>
+        
         <button type="submit" name="send" value="send">Send</button>
     </form>
 </body>
 </html>
-
