@@ -4,7 +4,7 @@
  */
 
 // GETパラメータからメールアドレスを取得
-$user_name = isset($_GET['user_name']) ? $_GET['user_name'] : 'unknown';
+$custom = isset($_GET['custom']) ? $_GET['custom'] : 'unknown';
 
 $api_secret = $config['measurement_protocol']['api_secret'];
 $measurement_id = $config['measurement_protocol']['ga_tracking_id'];
@@ -21,7 +21,7 @@ $data = [
         [
             'name' => 'email_tracking',
             'params' => [
-                'user_name' => $user_name,
+                'custom' => $custom,
                 'items' => [],
                 'action' => 'open'
             ]
