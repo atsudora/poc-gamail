@@ -13,7 +13,7 @@ return [
         'from_name' => 'Mailer',
         'subject' => 'Test Email for Google Analytics',
         'pixel_tracking_url' => 'https://poc-gamail.onrender.com/pixel_tracker.php',
-        'google_analytics_url' => 'https://poc-gamail.onrender.com/'
+        'google_analytics_url' => 'https://poc-gamail.onrender.com/complete.html'
     ],
     'measurement_protocol' => [
         'api_secret' => getenv('API_SECRET'),
