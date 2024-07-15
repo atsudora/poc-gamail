@@ -8,7 +8,7 @@ $custom = isset($_GET['custom']) ? $_GET['custom'] : 'unknown';
 
 $api_secret = $config['measurement_protocol']['api_secret'];
 $measurement_id = $config['measurement_protocol']['ga_tracking_id'];
-$client_id = ['measurement_protocol']['client_id'];
+$client_id = $config['measurement_protocol']['client_id'];
 
 // Measurement Protocol APIのエンドポイント
 $url = "https://www.google-analytics.com/mp/collect?api_secret=$api_secret&measurement_id=$measurement_id";
