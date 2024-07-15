@@ -15,7 +15,7 @@ $url = "https://www.google-analytics.com/mp/collect?api_secret=$api_secret&measu
 
 // トラッキングイベントのデータ
 $data = [
-    'client_id' => $client_id,
+    'client_id' => '1111',
     'non_personalized_ads' => false,
     'events' => [
         [
